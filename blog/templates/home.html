@@ -1,0 +1,48 @@
+<head>   
+    <style>
+        body {
+            background-color: rgb(194, 194, 194);
+        }
+        .title {
+            font-size: 45px;
+            color: rgb(225, 230, 225);
+            background-color: rgb(107, 105, 105);
+        }
+        .box {
+            border-style: dashed;
+            border-color: rgb(124, 122, 122);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 20px;
+            background-color: rgb(168, 167, 167); /**rgba(157, 189, 219, 0.877);**/
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Trebuchet MS';
+        }
+        .date {
+            text-align: right;
+            font-style: italic;
+        }
+        .text {
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <br>
+        <h1 class="title">POSTING</h1>
+        <br>
+    </header>
+    {% for blog in comments.all%}
+    <div class="box">
+        <h1>{{blog.title}}</h1>
+        <p class="date">{{blog.pub_date}}</p>
+        <br>
+        <p class="text">{{blog.body}}</p>
+        <br>
+    </div>
+    <br>
+    {%endfor%}    
+</body>
